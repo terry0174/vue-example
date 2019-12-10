@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 01</title>
+    <link rel="stylesheet" href="./css/app.css">
+    <script src="./js/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <form>
+            <div>
+                <label>欄位:</label>
+                <input type="checkbox" value="name" v-model="display.column">姓名
+                <input type="checkbox" value="sex" v-model="display.column">性別
+                <input type="checkbox" value="age" v-model="display.column">年齡
+                <input type="checkbox" value="phone" v-model="display.column">電話
+                <input type="checkbox" value="homePage" v-model="display.column">個人主頁
+            </div>
+            <div>
+                <label>性別:</label>
+                <input type="checkbox" value="male" v-model="display.sex">男
+                <input type="checkbox" value="female" v-model="display.sex">女
+            </div>
+        </form>
+        <table>
+            <tr>
+                <th v-show="display.column.includes('name')">姓名</th>
+                <th v-show="display.column.includes('sex')">性別</th>
+                <th v-show="display.column.includes('age')">年齡</th>
+                <th v-show="display.column.includes('phone')">電話</th>
+                <th v-show="display.column.includes('homePage')">個人主頁</th>
+            </tr>
+            <tr v-for="user in users" :key="user.name" :class="user.sex" v-if="display.sex.includes(user.sex)">
+                <td v-show="display.column.includes('name')">{{user.name}}</td>
+                <td v-show="display.column.includes('sex')">{{user.sex == 'male'?'男':'女'}}</td>
+                <td v-show="display.column.includes('age')">{{user.age}}</td>
+                <td v-show="display.column.includes('phone')">{{user.phone | phoneFormat}}</td>
+                <td v-show="display.column.includes('homePage')">
+                    <a v-bind:href="user.homePage">{{user.homePage}}</a>
+                </td>
+            </tr>
+        </table>
+        <user-form-component v-on:add="add($event)"></user-form-component>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
