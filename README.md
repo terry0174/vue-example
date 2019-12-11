@@ -18,6 +18,7 @@
     * example 02 - with JSON Server
     * example 03 - with REST API
 * 06 - Vue CLI
+    * example 00
     * example 01
     * example 02 - axios
     * example 03 - BootstrapVue

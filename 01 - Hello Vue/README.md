@@ -11,8 +11,8 @@ Vue.config.devtools = true;
 Vue.config.debug = true;
 ```
 
-## Chrome
+## Chrome Extension 
 > https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
 
-## FireFox
+## FireFox Addon 
 > https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/
