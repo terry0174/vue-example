@@ -8,14 +8,17 @@ Vue.config.debug = true;
 const router = new VueRouter({
     routes: [{
             path: '/',
+            name: 'list',
             component: httpVueLoader('vue/List.vue')
         },
         {
             path: '/user',
+            name: 'userFormAdd',
             component: httpVueLoader('vue/UserForm.vue')
         },
         {
             path: '/user/:id',
+            name: 'userFormUpdate',
             component: httpVueLoader('vue/UserForm.vue')
         }
     ]
