@@ -22,6 +22,7 @@
     * example 01
     * example 02 - axios
     * example 03 - BootstrapVue
+    * example 04 - Deploy
 # Tools
 http-server
 > https://github.com/http-party/http-server

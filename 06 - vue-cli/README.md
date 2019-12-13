@@ -40,19 +40,46 @@ $ npm install -g @vue/cli
         4. 使用`<b-form>`
         5. 使用`<b-button>`
         6. 使用`<b-nav>`
-    3. Build
+
+# Example 04
+
+* Note
+    1. Build
+        * 使用ui或指令建立
+            * 指令可參考`package.json`
         * 產出檔案位於`/dist`,可嘗試使用`http-server`執行
+    2. 在`Docker`上以`nginx`運行
+        1. Create `Dockerfile`
+        2. Create Image
+        3. Create Container
+
 
 # Command
 
-* 供參考使用
+### Build
 
-## axios
+```
+$ npm run build
+```
+
+### Docker
+
+```bash
+# Build Image
+$ docker build -t vue/example .
+
+# Run Container
+$ docker run -d -p 8080:80 vue/example:latest
+```
+
+## 供參考使用
+
+### axios
 ```
 $ npm install axios --save
 ```
 
-## BootstrapVue
+### BootstrapVue
 ```
 $ npm install bootstrap --save
 $ npm install bootstrap-vue --save
