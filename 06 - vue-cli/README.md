@@ -44,6 +44,15 @@ $ npm install -g @vue/cli
 # Example 04
 
 * Note
+    1. 建立`.env.development`與`.env.production`
+        * 指定兩個不同的`Json Server`位置
+    2. 將`axios`呼叫的位置改使用`process.env.`設定
+
+> https://cli.vuejs.org/zh/guide/mode-and-env.html
+
+# Example 05
+
+* Note
     1. Build
         * 使用ui或指令建立
             * 指令可參考`package.json`
@@ -52,7 +61,6 @@ $ npm install -g @vue/cli
         1. Create `Dockerfile`
         2. Create Image
         3. Create Container
-
 
 # Command
 

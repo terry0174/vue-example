@@ -45,8 +45,15 @@
 > https://github.com/jquery/jquery
 
 ## JSON Server
-```
-npm install -g json-server
+```bash
+# 安裝
+$ npm install -g json-server
+
+# 使用 (指定db檔)
+$ json-server -w db.json
+
+# 使用 (指定port)
+$ json-server -p 3000
 ```
 
 > https://github.com/typicode/json-server

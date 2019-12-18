@@ -22,7 +22,11 @@
 > https://github.com/FranckFreiburger/http-vue-loader
 
 ## http-server
-```
-npm install http-server -g
+```bash
+# 安裝
+$ npm install http-server -g
+
+# 使用
+$ http-server
 ```
 > https://github.com/http-party/http-server
