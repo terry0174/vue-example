@@ -18,8 +18,8 @@
             <input type="text" v-model="form.phone">
         </div>
         <div>
-            <label>個人主頁:</label>
-            <input type="text" v-model="form.homePage">
+            <label>E-mail:</label>
+            <input type="email" v-model="form.email">
         </div>
         <div>
             <button @click.prevent="add()">新增</button>
@@ -39,7 +39,7 @@
                     sex: 'male',
                     age: 30,
                     phone: '0955555555',
-                    homePage: 'http://www.google.com'
+                    email: 'user05@test.com'
                 }
             }
         },

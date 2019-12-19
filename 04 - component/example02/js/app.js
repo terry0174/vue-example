@@ -11,7 +11,7 @@ var app = new Vue({
     },
     data: {
         display: {
-            column: ['name', 'sex', 'age', 'phone', 'homePage'],
+            column: ['name', 'sex', 'age', 'phone', 'email'],
             sex: ['male', 'female']
         },
         table: [{
@@ -19,28 +19,28 @@ var app = new Vue({
                 sex: 'male',
                 age: 50,
                 phone: '09111111111',
-                homePage: 'http://www.google.com'
+                email: 'user01@test.com'
             },
             {
                 name: '陳二',
                 sex: 'male',
                 age: 10,
                 phone: '0922222222',
-                homePage: 'http://www.google.com'
+                email: 'user02@test.com'
             },
             {
                 name: '張三',
                 sex: 'female',
                 age: 20,
                 phone: '0933333333',
-                homePage: 'http://www.google.com'
+                email: 'user03@test.com'
             },
             {
                 name: '李四',
                 sex: 'female',
                 age: 40,
                 phone: '0944444444',
-                homePage: 'http://www.google.com'
+                email: 'user04@test.com'
             }
         ]
     },

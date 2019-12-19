@@ -17,8 +17,8 @@
                 <b-form-group label="電話:" label-cols="2">
                     <b-form-input v-model="form.phone" type="text" placeholder="Enter phone"></b-form-input>
                 </b-form-group>
-                <b-form-group label="個人主頁:" label-cols="2">
-                    <b-form-input v-model="form.homePage" type="text" placeholder="Enter url"></b-form-input>
+                <b-form-group label="E-mail:" label-cols="2">
+                    <b-form-input v-model="form.email" type="email" placeholder="Enter email"></b-form-input>
                 </b-form-group>
                 <b-button-group>
                     <b-button @click.prevent="updateUser()" v-if="isUpdate" variant="primary">修改</b-button>
@@ -41,7 +41,7 @@
                     sex: 'male',
                     age: 0,
                     phone: '',
-                    homePage: ''
+                    email: ''
                 }
             }
         },
@@ -61,7 +61,7 @@
                         sex: this.form.sex,
                         age: this.form.age,
                         phone: this.form.phone,
-                        homePage: this.form.homePage
+                        email: this.form.email
                     })
                     .then(function (response) {
                         // handle success

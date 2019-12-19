@@ -7,7 +7,7 @@
                 <input type="checkbox" value="sex" v-model="display.column">性別
                 <input type="checkbox" value="age" v-model="display.column">年齡
                 <input type="checkbox" value="phone" v-model="display.column">電話
-                <input type="checkbox" value="homePage" v-model="display.column">個人主頁
+                <input type="checkbox" value="email" v-model="display.column">E-mail
             </div>
             <div>
                 <label>性別:</label>
@@ -21,7 +21,7 @@
                 <th v-show="display.column.includes('sex')">性別</th>
                 <th v-show="display.column.includes('age')">年齡</th>
                 <th v-show="display.column.includes('phone')">電話</th>
-                <th v-show="display.column.includes('homePage')">個人主頁</th>
+                <th v-show="display.column.includes('email')">E-mail</th>
             </tr>
             <tr v-for="user in users" :key="user.name" :class="user.sex">
                 <template v-if="display.sex.includes(user.sex)">
@@ -29,8 +29,8 @@
                     <td v-show="display.column.includes('sex')">{{user.sex == 'male'?'男':'女'}}</td>
                     <td v-show="display.column.includes('age')">{{user.age}}</td>
                     <td v-show="display.column.includes('phone')">{{user.phone | phoneFormat}}</td>
-                    <td v-show="display.column.includes('homePage')">
-                        <a v-bind:href="user.homePage">{{user.homePage}}</a>
+                    <td v-show="display.column.includes('email')">
+                        <a v-bind:href="'mailto:' + user.email">{{user.email}}</a>
                     </td>
                 </template>
             </tr>
@@ -46,7 +46,7 @@
         data: function () {
             return {
                 display: {
-                    column: ['name', 'sex', 'age', 'phone', 'homePage'],
+                    column: ['name', 'sex', 'age', 'phone', 'email'],
                     sex: ['male', 'female']
                 },
                 table: [{
@@ -54,28 +54,28 @@
                         sex: 'male',
                         age: 50,
                         phone: '09111111111',
-                        homePage: 'http://www.google.com'
+                        email: 'user01@test.com'
                     },
                     {
                         name: '陳二',
                         sex: 'male',
                         age: 10,
                         phone: '0922222222',
-                        homePage: 'http://www.google.com'
+                        email: 'user02@test.com'
                     },
                     {
                         name: '張三',
                         sex: 'female',
                         age: 20,
                         phone: '0933333333',
-                        homePage: 'http://www.google.com'
+                        email: 'user03@test.com'
                     },
                     {
                         name: '李四',
                         sex: 'female',
                         age: 40,
                         phone: '0944444444',
-                        homePage: 'http://www.google.com'
+                        email: 'huser04@test.com'
                     }
                 ]
             }

@@ -5,7 +5,7 @@ Vue.config.devtools = true;
 Vue.config.debug = true;
 
 var userFormComponent = {
-    template: '<form><div><label>姓名:</label><input type="text" v-model="form.name"></div><div><label>性別:</label><input type="radio" value="male" v-model="form.sex">男<input type="radio" value="female" v-model="form.sex">女</div><div><label>年齡:</label><input type="number" v-model.number="form.age"></div><div><label>電話:</label><input type="text" v-model="form.phone"></div><div><label>個人主頁:</label><input type="text" v-model="form.homePage"></div><div><button @click.prevent="add()">新增</button></div></form>',
+    template: '<form><div><label>姓名:</label><input type="text" v-model="form.name"></div><div><label>性別:</label><input type="radio" value="male" v-model="form.sex">男<input type="radio" value="female" v-model="form.sex">女</div><div><label>年齡:</label><input type="number" v-model.number="form.age"></div><div><label>電話:</label><input type="text" v-model="form.phone"></div><div><label>E-mail:</label><input type="email" v-model="form.email"></div><div><button @click.prevent="add()">新增</button></div></form>',
 
     data: function () {
         return {
@@ -14,7 +14,7 @@ var userFormComponent = {
                 sex: 'male',
                 age: 30,
                 phone: '0955555555',
-                homePage: 'http://www.google.com'
+                email: 'user05@test.com'
             }
         }
     },
@@ -25,7 +25,7 @@ var userFormComponent = {
                 sex: this.form.sex,
                 age: this.form.age,
                 phone: this.form.phone,
-                homePage: this.form.homePage
+                email: this.form.email
             });
         }
     }
@@ -38,7 +38,7 @@ var app = new Vue({
     },
     data: {
         display: {
-            column: ['name', 'sex', 'age', 'phone', 'homePage'],
+            column: ['name', 'sex', 'age', 'phone', 'email'],
             sex: ['male', 'female']
         },
         table: [{
@@ -46,28 +46,28 @@ var app = new Vue({
                 sex: 'male',
                 age: 50,
                 phone: '09111111111',
-                homePage: 'http://www.google.com'
+                email: 'user01@test.com'
             },
             {
                 name: '陳二',
                 sex: 'male',
                 age: 10,
                 phone: '0922222222',
-                homePage: 'http://www.google.com'
+                email: 'user02@test.com'
             },
             {
                 name: '張三',
                 sex: 'female',
                 age: 20,
                 phone: '0933333333',
-                homePage: 'http://www.google.com'
+                email: 'user03@test.com'
             },
             {
                 name: '李四',
                 sex: 'female',
                 age: 40,
                 phone: '0944444444',
-                homePage: 'http://www.google.com'
+                email: 'user04@test.com'
             }
         ]
     },

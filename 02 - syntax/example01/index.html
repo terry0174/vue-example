@@ -17,7 +17,7 @@
                 <th>性別</th>
                 <th>年齡</th>
                 <th>電話</th>
-                <th>個人主頁</th>
+                <th>E-mail</th>
             </tr>
             <tr class="male">
                 <td>劉一</td>
@@ -25,7 +25,7 @@
                 <td>50</td>
                 <td>09111111111</td>
                 <td>
-                    <a href="http://www.google.com">http://www.google.com</a>
+                    <a href="mailto:user01@test.com">user01@test.com</a>
                 </td>
             </tr>
             <tr class="male">
@@ -34,7 +34,7 @@
                 <td>10</td>
                 <td>0922222222</td>
                 <td>
-                    <a href="http://www.google.com">http://www.google.com</a>
+                    <a href="mailto:user02@test.com">user02@test.com</a>
                 </td>
             </tr>
             <tr class="female">
@@ -43,7 +43,7 @@
                 <td>20</td>
                 <td>0933333333</td>
                 <td>
-                    <a href="http://www.google.com">http://www.google.com</a>
+                    <a href="mailto:user03@test.com">user03@test.com</a>
                 </td>
             </tr>
             <tr class="female">
@@ -52,7 +52,7 @@
                 <td>40</td>
                 <td>0944444444</td>
                 <td>
-                    <a href="http://www.google.com">http://www.google.com</a>
+                    <a href="mailto:user04@test.com">user04@test.com</a>
                 </td>
             </tr>
             <tr :class="sex">
@@ -61,7 +61,7 @@
                 <td>{{age}}</td>
                 <td>{{phone}}</td>
                 <td>
-                    <a v-bind:href="homePage">{{homePage}}</a>
+                    <a v-bind:href="'mailto:' + email">{{email}}</a>
                 </td>
             </tr>
         </table>
@@ -84,8 +84,8 @@
                 <input type="text" v-model="phone">
             </div>
             <div>
-                <label>個人主頁:</label>
-                <input type="text" v-model="homePage">
+                <label>E-mail:</label>
+                <input type="email" v-model="email">
             </div>
         </form>
     </div>

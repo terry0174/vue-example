@@ -18,8 +18,8 @@
             <input type="text" v-model="form.phone">
         </div>
         <div>
-            <label>個人主頁:</label>
-            <input type="text" v-model="form.homePage">
+            <label>E-mail:</label>
+            <input type="email" v-model="form.email">
         </div>
         <div>
 
@@ -41,7 +41,7 @@
                     sex: 'male',
                     age: 0,
                     phone: '',
-                    homePage: ''
+                    email: ''
                 }
             }
         },
@@ -82,7 +82,7 @@
                         sex: this.form.sex,
                         age: this.form.age,
                         phone: this.form.phone,
-                        homePage: this.form.homePage
+                        email: this.form.email
                     })
                 }).done(function (response) {
                     _this.$router.push("/");

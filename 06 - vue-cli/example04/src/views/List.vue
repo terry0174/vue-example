@@ -8,7 +8,7 @@
                         <b-form-checkbox value="sex">性別</b-form-checkbox>
                         <b-form-checkbox value="age">年齡</b-form-checkbox>
                         <b-form-checkbox value="phone">電話</b-form-checkbox>
-                        <b-form-checkbox value="homePage">個人主頁</b-form-checkbox>
+                        <b-form-checkbox value="email">E-mail</b-form-checkbox>
                     </b-form-checkbox-group>
                 </b-form-group>
                 <b-form-group label="性別:">
@@ -30,8 +30,8 @@
                 <template v-slot:cell(phone)="data">
                     {{ data.value | phoneFormat}}
                 </template>
-                <template v-slot:cell(homePage)="data">
-                    <a :href="data.value">
+                <template v-slot:cell(email)="data">
+                    <a :href="'mailto:' + data.value">
                         {{ data.value }}
                     </a>
                 </template>
@@ -49,7 +49,7 @@
         data: function () {
             return {
                 display: {
-                    column: ['name', 'sex', 'age', 'phone', 'homePage'],
+                    column: ['name', 'sex', 'age', 'phone', 'email'],
                     sex: ['male', 'female']
                 },
                 table: [],

@@ -6,7 +6,7 @@
       "sex": "male",
       "age": 50,
       "phone": "0911111111",
-      "homePage": "http://www.google.com"
+      "email": "user01@test.com"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "sex": "male",
       "age": 10,
       "phone": "0922222222",
-      "homePage": "http://www.google.com"
+      "email": "user02@test.com"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "sex": "female",
       "age": 20,
       "phone": "0933333333",
-      "homePage": "http://www.google.com"
+      "email": "user03@test.com"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "sex": "female",
       "age": 40,
       "phone": "0944444444",
-      "homePage": "http://www.google.com"
+      "email": "user04@test.com"
     }
   ]
 }

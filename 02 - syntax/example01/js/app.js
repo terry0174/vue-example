@@ -11,6 +11,6 @@ var app = new Vue({
         sex: 'male',
         age: 30,
         phone: '0955555555',
-        homePage: 'http://www.google.com'
+        email: 'user05@test.com'
     }
 })
