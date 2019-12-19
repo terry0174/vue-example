@@ -26,6 +26,8 @@
     * example 05 - Deploy
 * 07 - Vuex
     * example 00
+    * example 01 - Authentication
+    * example 02 - Permissions
 # Tools
 http-server
 > https://github.com/http-party/http-server

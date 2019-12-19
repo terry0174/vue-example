@@ -54,6 +54,9 @@ $ json-server -w db.json
 
 # 使用 (指定port)
 $ json-server -p 3000
+
+# 使用 (指定routes檔)
+$ json-server -r routes.json
 ```
 
 > https://github.com/typicode/json-server
