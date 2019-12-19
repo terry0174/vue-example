@@ -24,6 +24,8 @@
     * example 03 - BootstrapVue
     * example 04 - mode and env
     * example 05 - Deploy
+* 07 - Vuex
+    * example 00
 # Tools
 http-server
 > https://github.com/http-party/http-server
