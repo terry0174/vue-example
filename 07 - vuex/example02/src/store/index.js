@@ -15,6 +15,11 @@ export default new Vuex.Store({
 			state.accessToken = null;
 		}
 	},
+	getters: {
+		isLogin(state) {
+			return state.accessToken != null && state.accessToken != undefined;
+		}
+	},
 	actions: {},
 	modules: {}
 })
