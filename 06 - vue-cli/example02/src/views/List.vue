@@ -24,26 +24,26 @@
                 <th v-show="display.column.includes('phone')">電話</th>
                 <th v-show="display.column.includes('email')">E-mail</th>
             </tr>
-            <tr v-for="user in users" :key="user.name" :class="user.sex">
-                <template v-if="display.sex.includes(user.sex)">
+            <tr v-for="item in items" :key="item.name" :class="item.sex">
+                <template v-if="display.sex.includes(item.sex)">
                     <td>
-                        <button @click="deleteUser(user.id)">X</button>
+                        <button @click="removeItem(item.id)">X</button>
                     </td>
                     <td v-show="display.column.includes('name')">
-                        <router-link :to="'/user/' + user.id">
-                            {{user.name}}
+                        <router-link :to="'/form/' + item.id">
+                            {{item.name}}
                         </router-link>
                     </td>
-                    <td v-show="display.column.includes('sex')">{{user.sex == 'male'?'男':'女'}}</td>
-                    <td v-show="display.column.includes('age')">{{user.age}}</td>
-                    <td v-show="display.column.includes('phone')">{{user.phone | phoneFormat}}</td>
+                    <td v-show="display.column.includes('sex')">{{item.sex == 'male'?'男':'女'}}</td>
+                    <td v-show="display.column.includes('age')">{{item.age}}</td>
+                    <td v-show="display.column.includes('phone')">{{item.phone | phoneFormat}}</td>
                     <td v-show="display.column.includes('email')">
-                        <a v-bind:href="'mailto:' + user.email">{{user.email}}</a>
+                        <a v-bind:href="'mailto:' + item.email">{{item.email}}</a>
                     </td>
                 </template>
             </tr>
         </table>
-        <router-link to="/user">
+        <router-link to="/form">
             <button>新增</button>
         </router-link>
     </div>
@@ -59,7 +59,7 @@
                     column: ['name', 'sex', 'age', 'phone', 'email'],
                     sex: ['male', 'female']
                 },
-                table: []
+                data: []
             }
         },
         filters: {
@@ -68,18 +68,18 @@
             }
         },
         computed: {
-            users: function () {
-                return this.table.sort(function (a, b) {
+            items: function () {
+                return this.data.sort(function (a, b) {
                     return a.age > b.age ? 1 : -1;
                 });
             }
         },
         methods: {
-            deleteUser: function (id) {
+            removeItem: function (id) {
 
                 var _this = this;
 
-                axios.delete('http://localhost:3000/users/' + id)
+                axios.delete('http://localhost:3000/item/' + id)
                     .then(function (response) {
                         // handle success
                         _this.init();
@@ -96,10 +96,10 @@
 
                 var _this = this;
 
-                axios.get('http://localhost:3000/users')
+                axios.get('http://localhost:3000/item')
                     .then(function (response) {
                         // handle success
-                        _this.table = response.data;
+                        _this.data = response.data;
                     })
                     .catch(function (error) {
                         // handle error

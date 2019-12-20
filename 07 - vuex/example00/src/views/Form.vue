@@ -1,7 +1,7 @@
 <template>
     <b-container>
         <b-card bg-variant="light">
-            <b-form @submit.prevent="(isUpdate ? updateUser() : addUser())" @reset="$router.push('/')">
+            <b-form @submit.prevent="(isUpdate ? updateItem() : addItem())" @reset="$router.push('/')">
                 <b-form-group label="姓名:" label-cols="2">
                     <b-form-input v-model="form.name" type="text" placeholder="Enter name"></b-form-input>
                 </b-form-group>
@@ -50,11 +50,11 @@
             }
         },
         methods: {
-            updateUser: function () {
+            updateItem: function () {
 
                 var _this = this;
 
-                axios.put(process.env.VUE_APP_JSON_SERVER + '/users/' + this.$route.params.id, {
+                axios.put(process.env.VUE_APP_JSON_SERVER + '/item/' + this.$route.params.id, {
                         id: this.$route.params.id,
                         name: this.form.name,
                         sex: this.form.sex,
@@ -74,11 +74,11 @@
                         // always executed
                     });
             },
-            addUser: function () {
+            addItem: function () {
 
                 var _this = this;
 
-                axios.post(process.env.VUE_APP_JSON_SERVER + '/users', this.form)
+                axios.post(process.env.VUE_APP_JSON_SERVER + '/item', this.form)
                     .then(function (response) {
                         // handle success
                         _this.$router.push("/");
@@ -97,7 +97,7 @@
 
                     var _this = this;
 
-                    axios.get(process.env.VUE_APP_JSON_SERVER + '/users/' + this.$route.params.id)
+                    axios.get(process.env.VUE_APP_JSON_SERVER + '/item/' + this.$route.params.id)
                         .then(function (response) {
                             // handle success
                             _this.form = response.data;

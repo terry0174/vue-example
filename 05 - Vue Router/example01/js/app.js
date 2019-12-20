@@ -11,8 +11,8 @@ const router = new VueRouter({
             component: httpVueLoader('vue/List.vue')
         },
         {
-            path: '/user',
-            component: httpVueLoader('vue/UserForm.vue')
+            path: '/form',
+            component: httpVueLoader('vue/Form.vue')
         }
     ]
 });

@@ -3,7 +3,7 @@
 		<b-nav tabs align="center">
 			<template v-if="$store.getters.isLogin">
 				<b-nav-item to="/" exact exact-active-class="active">List</b-nav-item>
-				<b-nav-item to="/user" active-class="active">Form</b-nav-item>
+				<b-nav-item to="/form" active-class="active">Form</b-nav-item>
 				<b-nav-item @click="logout()">Logout</b-nav-item>
 			</template>
 			<template v-else>

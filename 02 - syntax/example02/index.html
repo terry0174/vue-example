@@ -34,13 +34,13 @@
                 <th v-show="display.column.includes('phone')">電話</th>
                 <th v-show="display.column.includes('email')">E-mail</th>
             </tr>
-            <tr v-for="user in table" :key="user.name" :class="user.sex" v-if="display.sex.includes(user.sex)">
-                <td v-show="display.column.includes('name')">{{user.name}}</td>
-                <td v-show="display.column.includes('sex')">{{user.sex == 'male'?'男':'女'}}</td>
-                <td v-show="display.column.includes('age')">{{user.age}}</td>
-                <td v-show="display.column.includes('phone')">{{user.phone}}</td>
+            <tr v-for="item in data" :key="item.name" :class="item.sex" v-if="display.sex.includes(item.sex)">
+                <td v-show="display.column.includes('name')">{{item.name}}</td>
+                <td v-show="display.column.includes('sex')">{{item.sex == 'male'?'男':'女'}}</td>
+                <td v-show="display.column.includes('age')">{{item.age}}</td>
+                <td v-show="display.column.includes('phone')">{{item.phone}}</td>
                 <td v-show="display.column.includes('email')">
-                    <a v-bind:href="'mailto:' + user.email">{{user.email}}</a>
+                    <a v-bind:href="'mailto:' + item.email">{{item.email}}</a>
                 </td>
             </tr>
             <tr :class="form.sex" v-if="display.sex.includes(form.sex)">

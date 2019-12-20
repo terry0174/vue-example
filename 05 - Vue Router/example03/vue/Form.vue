@@ -23,8 +23,8 @@
         </div>
         <div>
 
-            <button @click.prevent="updateUser()" v-if="isUpdate">修改</button>
-            <button @click.prevent="addUser()" v-else>新增</button>
+            <button @click.prevent="updateItem()" v-if="isUpdate">修改</button>
+            <button @click.prevent="addItem()" v-else>新增</button>
             <router-link to="/">
                 <button>取消</button>
             </router-link>
@@ -60,14 +60,14 @@
             }
         },
         methods: {
-            updateUser: function () {
+            updateItem: function () {
 
                 var _this = this;
 
                 $.ajax({
                     "async": true,
                     "crossDomain": true,
-                    "url": "http://localhost:3000/users/" + this.$route.params.id,
+                    "url": "http://localhost:3000/item/" + this.$route.params.id,
                     "method": "PUT",
                     "headers": {
                         "Content-Type": "application/json",
@@ -88,14 +88,14 @@
                     _this.$router.push("/");
                 });
             },
-            addUser: function () {
+            addItem: function () {
 
                 var _this = this;
 
                 $.ajax({
                     "async": true,
                     "crossDomain": true,
-                    "url": "http://localhost:3000/users",
+                    "url": "http://localhost:3000/item",
                     "method": "POST",
                     "headers": {
                         "Content-Type": "application/json",
@@ -118,7 +118,7 @@
                     $.ajax({
                         "async": true,
                         "crossDomain": true,
-                        "url": "http://localhost:3000/users/" + this.$route.params.id,
+                        "url": "http://localhost:3000/item/" + this.$route.params.id,
                         "method": "GET",
                         "headers": {
                             "Content-Type": "application/json",

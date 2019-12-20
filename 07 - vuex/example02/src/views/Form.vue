@@ -1,7 +1,7 @@
 <template>
     <b-container>
         <b-card bg-variant="light">
-            <b-form @submit.prevent="(isUpdate ? updateUser() : addUser())" @reset="$router.push('/')">
+            <b-form @submit.prevent="(isUpdate ? updateItem() : addItem())" @reset="$router.push('/')">
                 <b-form-group label="姓名:" label-cols="2">
                     <b-form-input v-model="form.name" type="text" placeholder="Enter name"></b-form-input>
                 </b-form-group>
@@ -18,10 +18,7 @@
                     <b-form-input v-model="form.phone" type="text" placeholder="Enter phone"></b-form-input>
                 </b-form-group>
                 <b-form-group label="E-mail:" label-cols="2">
-                    <b-form-input v-model="form.email" type="email" placeholder="Enter email" :disabled="isUpdate" required></b-form-input>
-                </b-form-group>
-                <b-form-group label="密碼:" label-cols="2">
-                    <b-form-input v-model="form.password" type="password" placeholder="Enter password" :disabled="isUpdate" required></b-form-input>
+                    <b-form-input v-model="form.email" type="email" placeholder="Enter email"></b-form-input>
                 </b-form-group>
                 <b-button-group>
                     <b-button type="submit" variant="primary">{{isUpdate ? '修改' : '新增'}}</b-button>
@@ -43,8 +40,7 @@
                     sex: 'male',
                     age: 0,
                     phone: '',
-                    email: '',
-                    password: ''
+                    email: ''
                 }
             }
         },
@@ -54,18 +50,17 @@
             }
         },
         methods: {
-            updateUser: function () {
+            updateItem: function () {
 
                 var _this = this;
 
-                axios.put(process.env.VUE_APP_JSON_SERVER + '/users/' + this.$route.params.id, {
+                axios.put(process.env.VUE_APP_JSON_SERVER + '/item/' + this.$route.params.id, {
                         id: this.$route.params.id,
                         name: this.form.name,
                         sex: this.form.sex,
                         age: this.form.age,
                         phone: this.form.phone,
-                        email: this.form.email,
-                        password: this.form.password
+                        email: this.form.email
                     }, {
                         headers: {
                             "Authorization": "Bearer " + this.$store.state.accessToken
@@ -84,11 +79,16 @@
                         // always executed
                     });
             },
-            addUser: function () {
+            addItem: function () {
 
                 var _this = this;
 
-                axios.post(process.env.VUE_APP_JSON_SERVER + '/register', this.form)
+                axios.post(process.env.VUE_APP_JSON_SERVER + '/item', this.form, {
+                        headers: {
+                            "Authorization": "Bearer " + this.$store.state.accessToken
+                        },
+
+                    })
                     .then(function (response) {
                         // handle success
                         _this.$router.push("/");
@@ -107,7 +107,7 @@
 
                     var _this = this;
 
-                    axios.get(process.env.VUE_APP_JSON_SERVER + '/users/' + this.$route.params.id, {
+                    axios.get(process.env.VUE_APP_JSON_SERVER + '/item/' + this.$route.params.id, {
                             headers: {
                                 "Authorization": "Bearer " + this.$store.state.accessToken
                             }

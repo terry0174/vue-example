@@ -1,40 +1,62 @@
 {
   "users": [
     {
-      "email": "user01@test.com",
+      "email": "test01@asgard.com.tw",
       "password": "$2a$10$2dE5BIA6AHnYUOhFmSMDmuiObaSyT7UtmTYBSr3y02EL8Hc0YbN5y",
+      "id": 1
+    },
+    {
+      "email": "test02@asgard.com.tw",
+      "password": "$2a$10$2dE5BIA6AHnYUOhFmSMDmuiObaSyT7UtmTYBSr3y02EL8Hc0YbN5y",
+      "id": 2
+    },
+    {
+      "email": "test03@asgard.com.tw",
+      "password": "$2a$10$2dE5BIA6AHnYUOhFmSMDmuiObaSyT7UtmTYBSr3y02EL8Hc0YbN5y",
+      "id": 3
+    },
+    {
+      "email": "test04@asgard.com.tw",
+      "password": "$2a$10$2dE5BIA6AHnYUOhFmSMDmuiObaSyT7UtmTYBSr3y02EL8Hc0YbN5y",
+      "id": 4
+    }
+  ],
+  "item": [
+    {
+      "id": 1,
       "name": "劉一",
       "sex": "male",
       "age": 50,
       "phone": "0911111111",
-      "id": 1
+      "email": "test01@asgard.com.tw",
+      "userId": 1
     },
     {
-      "email": "user02@test.com",
-      "password": "$2a$10$2dE5BIA6AHnYUOhFmSMDmuiObaSyT7UtmTYBSr3y02EL8Hc0YbN5y",
+      "id": 2,
       "name": "陳二",
       "sex": "male",
       "age": 10,
       "phone": "0922222222",
-      "id": 2
+      "email": "test02@asgard.com.tw",
+      "userId": 2
     },
     {
-      "email": "user03@test.com",
-      "password": "$2a$10$2dE5BIA6AHnYUOhFmSMDmuiObaSyT7UtmTYBSr3y02EL8Hc0YbN5y",
+      "id": 3,
       "name": "張三",
       "sex": "female",
       "age": 20,
       "phone": "0933333333",
-      "id": 3
+      "email": "test03@asgard.com.tw",
+      "userId": 1
     },
     {
-      "email": "user04@test.com",
-      "password": "$2a$10$2dE5BIA6AHnYUOhFmSMDmuiObaSyT7UtmTYBSr3y02EL8Hc0YbN5y",
+      "id": 4,
       "name": "李四",
       "sex": "female",
       "age": 40,
       "phone": "0944444444",
-      "id": 4
+      "email": "test04@asgard.com.tw",
+      "userId": 2
     }
   ]
 }

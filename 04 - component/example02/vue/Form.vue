@@ -23,9 +23,6 @@
         </div>
         <div>
             <button @click.prevent="add()">新增</button>
-            <router-link to="/">
-                <button>取消</button>
-            </router-link>
         </div>
     </form>
 </template>
@@ -39,7 +36,7 @@
                     sex: 'male',
                     age: 30,
                     phone: '0955555555',
-                    email: 'user05@test.com'
+                    email: 'test05@asgard.com.tw'
                 }
             }
         },
@@ -53,7 +50,15 @@
             }
         },
         methods: {
-            add: function () {}
+            add: function () {
+                this.$emit('add', {
+                    name: this.form.name,
+                    sex: this.form.sex,
+                    age: this.form.age,
+                    phone: this.form.phone,
+                    email: this.form.email
+                });
+            }
         }
-    };
+    }
 </script>

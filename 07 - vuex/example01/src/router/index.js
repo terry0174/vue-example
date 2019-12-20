@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import list from '../views/List.vue'
 import login from '../views/Login.vue'
-import userForm from '../views/UserForm.vue'
+import form from '../views/Form.vue'
 
 Vue.use(VueRouter)
 
@@ -16,14 +16,14 @@ const routes = [{
     component: login
   },
   {
-    path: '/user',
-    name: 'userFormAdd',
-    component: userForm
+    path: '/form',
+    name: 'formAdd',
+    component: form
   },
   {
-    path: '/user/:id',
-    name: 'userFormUpdate',
-    component: userForm
+    path: '/form/:id',
+    name: 'formUpdate',
+    component: form
   }
 ]
 

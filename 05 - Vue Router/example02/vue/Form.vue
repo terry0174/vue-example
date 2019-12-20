@@ -22,7 +22,10 @@
             <input type="email" v-model="form.email">
         </div>
         <div>
-            <button @click.prevent="add()">新增</button>
+            <button @click.prevent="addItem()">新增</button>
+            <router-link to="/">
+                <button>取消</button>
+            </router-link>
         </div>
     </form>
 </template>
@@ -32,11 +35,11 @@
         data: function () {
             return {
                 form: {
-                    name: '王五',
+                    name: '',
                     sex: 'male',
-                    age: 30,
-                    phone: '0955555555',
-                    email: 'user05@test.com'
+                    age: 0,
+                    phone: '',
+                    email: ''
                 }
             }
         },
@@ -50,15 +53,27 @@
             }
         },
         methods: {
-            add: function () {
-                this.$emit('add', {
-                    name: this.form.name,
-                    sex: this.form.sex,
-                    age: this.form.age,
-                    phone: this.form.phone,
-                    email: this.form.email
+            addItem: function () {
+
+                var _this = this;
+
+                $.ajax({
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "http://localhost:3000/item",
+                    "method": "POST",
+                    "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "*/*",
+                        "Cache-Control": "no-cache",
+                        "cache-control": "no-cache"
+                    },
+                    "processData": false,
+                    "data": JSON.stringify(this.form)
+                }).done(function (response) {
+                    _this.$router.push("/");
                 });
             }
         }
-    }
+    };
 </script>

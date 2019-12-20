@@ -18,12 +18,12 @@
                     </b-form-checkbox-group>
                 </b-form-group>
             </b-form>
-            <b-table striped hover id="users-table" :items="users" :fields="fields" :per-page="perPage" :current-page="currentPage">
+            <b-table striped hover id="items-table" :items="items" :fields="fields" :per-page="perPage" :current-page="currentPage">
                 <template v-slot:cell(id)="data">
-                    <b-link @click.prevent="deleteUser(data.value)">X</b-link>
+                    <b-link @click.prevent="removeItem(data.value)">X</b-link>
                 </template>
                 <template v-slot:cell(name)="data">
-                    <router-link :to="'/user/' + data.item.id">
+                    <router-link :to="'/form/' + data.item.id">
                         {{data.value}}
                     </router-link>
                 </template>
@@ -36,7 +36,7 @@
                     </a>
                 </template>
             </b-table>
-            <b-pagination aria-controls="users-table" v-model="currentPage" :total-rows="users.length" :per-page="perPage" first-text="First" prev-text="Prev" next-text="Next" last-text="Last" align="center">
+            <b-pagination aria-controls="items-table" v-model="currentPage" :total-rows="items.length" :per-page="perPage" first-text="First" prev-text="Prev" next-text="Next" last-text="Last" align="center">
             </b-pagination>
         </b-card>
     </b-container>
@@ -52,7 +52,7 @@
                     column: ['name', 'sex', 'age', 'phone', 'email'],
                     sex: ['male', 'female']
                 },
-                table: [],
+                data: [],
                 currentPage: 1,
                 perPage: 5
             }
@@ -81,21 +81,21 @@
 
                 return fields;
             },
-            users: function () {
+            items: function () {
 
                 var _this = this;
 
-                return this.table.filter(function (value, index, arr) {
+                return this.data.filter(function (value, index, arr) {
                     return _this.display.sex.includes(value.sex);
                 });
             }
         },
         methods: {
-            deleteUser: function (id) {
+            removeItem: function (id) {
 
                 var _this = this;
 
-                axios.delete(process.env.VUE_APP_JSON_SERVER + '/users/' + id)
+                axios.delete(process.env.VUE_APP_JSON_SERVER + '/item/' + id)
                     .then(function (response) {
                         // handle success
                         _this.init();
@@ -112,10 +112,10 @@
 
                 var _this = this;
 
-                axios.get(process.env.VUE_APP_JSON_SERVER + '/users')
+                axios.get(process.env.VUE_APP_JSON_SERVER + '/item')
                     .then(function (response) {
                         // handle success
-                        _this.table = response.data;
+                        _this.data = response.data;
                     })
                     .catch(function (error) {
                         // handle error

@@ -23,8 +23,8 @@
         </div>
         <div>
 
-            <button @click.prevent="updateUser()" v-if="isUpdate">修改</button>
-            <button @click.prevent="addUser()" v-else>新增</button>
+            <button @click.prevent="updateItem()" v-if="isUpdate">修改</button>
+            <button @click.prevent="addItem()" v-else>新增</button>
             <router-link to="/">
                 <button>取消</button>
             </router-link>
@@ -62,11 +62,11 @@
             }
         },
         methods: {
-            updateUser: function () {
+            updateItem: function () {
 
                 var _this = this;
 
-                axios.put('http://localhost:3000/users/' + this.$route.params.id, {
+                axios.put('http://localhost:3000/item/' + this.$route.params.id, {
                         id: this.$route.params.id,
                         name: this.form.name,
                         sex: this.form.sex,
@@ -86,11 +86,11 @@
                         // always executed
                     });
             },
-            addUser: function () {
+            addItem: function () {
 
                 var _this = this;
 
-                axios.post('http://localhost:3000/users', this.form)
+                axios.post('http://localhost:3000/item', this.form)
                     .then(function (response) {
                         // handle success
                         _this.$router.push("/");
@@ -109,7 +109,7 @@
 
                     var _this = this;
 
-                    axios.get('http://localhost:3000/users/' + this.$route.params.id)
+                    axios.get('http://localhost:3000/item/' + this.$route.params.id)
                         .then(function (response) {
                             // handle success
                             _this.form = response.data;
