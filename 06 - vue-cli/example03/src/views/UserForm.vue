@@ -1,7 +1,7 @@
 <template>
     <b-container>
         <b-card bg-variant="light">
-            <b-form>
+            <b-form @submit.prevent="(isUpdate ? updateUser() : addUser())" @reset="$router.push('/')">
                 <b-form-group label="姓名:" label-cols="2">
                     <b-form-input v-model="form.name" type="text" placeholder="Enter name"></b-form-input>
                 </b-form-group>
@@ -21,9 +21,8 @@
                     <b-form-input v-model="form.email" type="email" placeholder="Enter email"></b-form-input>
                 </b-form-group>
                 <b-button-group>
-                    <b-button @click.prevent="updateUser()" v-if="isUpdate" variant="primary">修改</b-button>
-                    <b-button @click.prevent="addUser()" v-else variant="primary">新增</b-button>
-                    <b-button variant="danger" @click="$router.push('/')">取消</b-button>
+                    <b-button type="submit" variant="primary">{{isUpdate ? '修改' : '新增'}}</b-button>
+                    <b-button type="reset" variant="danger">取消</b-button>
                 </b-button-group>
             </b-form>
         </b-card>
