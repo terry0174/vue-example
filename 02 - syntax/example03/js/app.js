@@ -12,28 +12,28 @@ var app = new Vue({
             sex: ['male', 'female']
         },
         data: [{
-                name: '劉一',
+                name: '大雄',
                 sex: 'male',
                 age: 50,
                 phone: '09111111111',
                 email: 'test01@asgard.com.tw'
             },
             {
-                name: '陳二',
+                name: '靜香',
                 sex: 'male',
                 age: 10,
                 phone: '0922222222',
                 email: 'test02@asgard.com.tw'
             },
             {
-                name: '張三',
+                name: '小夫',
                 sex: 'female',
                 age: 20,
                 phone: '0933333333',
                 email: 'test03@asgard.com.tw'
             },
             {
-                name: '李四',
+                name: '胖虎',
                 sex: 'female',
                 age: 40,
                 phone: '0944444444',
@@ -41,7 +41,7 @@ var app = new Vue({
             }
         ],
         form: {
-            name: '王五',
+            name: '哆啦A夢',
             sex: 'male',
             phone: '0955555555',
             age: 30,

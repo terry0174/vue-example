@@ -7,7 +7,7 @@ Vue.config.debug = true;
 var app = new Vue({
     el: '#app',
     data: {
-        name: '王五',
+        name: '哆啦A夢',
         sex: 'male',
         age: 30,
         phone: '0955555555',
