@@ -57,8 +57,8 @@ var app = new Vue({
         }
     },
     methods: {
-        add: function (person) {
-            this.data.push(person);
+        add: function (value) {
+            this.data.push(value);
         }
     }
 })
