@@ -36,6 +36,9 @@ http-server
 json-server
 > https://github.com/typicode/json-server
 
+json-server-auth
+> https://github.com/jeremyben/json-server-auth
+
 jquery
 > https://github.com/jquery/jquery
 
@@ -50,6 +53,9 @@ http-vue-loader
 
 vue-router
 > https://github.com/vuejs/vue-router
+
+vuex
+> https://github.com/vuejs/vuex
 
 vue-cli
 > https://github.com/vuejs/vue-cli
