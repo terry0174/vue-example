@@ -39,6 +39,7 @@
     4. `List.vue`設為僅顯示屬於自己`userId`的資料
 
 > https://jwt.io/
+
 > https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library
 
 # Tools
