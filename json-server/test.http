@@ -1,0 +1,154 @@
+# json-server -w db.json
+# json-server -w db.json -p 3000
+
+### GET
+GET /item HTTP/1.1
+Host: localhost:3000
+
+### GET
+GET /item/1 HTTP/1.1
+Host: localhost:3000
+
+### POST
+POST /item HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+	"name": "哆啦A夢",
+	"sex": "male",
+	"age": 30,
+	"phone": "0955555555",
+	"email": "test05@asgard.com.tw"
+}
+
+### PUT
+PUT /item/5 HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+	"name": "哆啦A夢",
+	"sex": "female",
+	"age": 40,
+	"phone": "0955555555",
+	"email": "test05@asgard.com.tw"
+}
+
+### DELETE
+DELETE /item/5 HTTP/1.1
+Host: localhost:3000
+
+# json-server-auth -w db-auth.json
+
+### 註冊 (register / signup / users)
+POST /register HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+	"email": "test05@asgard.com.tw",
+    "password": "1234"
+}
+
+### 登入 (login / signin)
+POST /login HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+	"email": "test01@asgard.com.tw",
+    "password": "1234"
+}
+
+# json-server-auth -w db-auth.json -r routes.json
+
+### GET
+GET /item HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+### GET
+GET /item/1 HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+### POST
+POST /item HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+{
+	"name": "哆啦A夢",
+	"sex": "male",
+	"age": 30,
+	"phone": "0955555555",
+	"email": "test05@asgard.com.tw"
+}
+
+### PUT
+PUT /item/5 HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+{
+	"name": "哆啦A夢",
+	"sex": "female",
+	"age": 40,
+	"phone": "0955555555",
+	"email": "test05@asgard.com.tw"
+}
+
+### DELETE
+DELETE /item/5 HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+# json-server-auth -w db-auth.json -r routes_600.json
+
+### GET
+GET /item HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+### GET
+GET /item/1 HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+### POST
+POST /item HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+{
+	"name": "哆啦A夢",
+	"sex": "male",
+	"age": 30,
+	"phone": "0955555555",
+	"email": "test05@asgard.com.tw",
+    "userId": 1
+}
+
+### PUT
+PUT /item/5 HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
+
+{
+	"name": "哆啦A夢",
+	"sex": "female",
+	"age": 40,
+	"phone": "0955555555",
+	"email": "test05@asgard.com.tw",
+    "userId": 1
+}
+
+### DELETE
+DELETE /item/5 HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QwMUBhc2dhcmQuY29tLnR3IiwiaWF0IjoxNTc3MjU2MTYzLCJleHAiOjE1NzcyNTk3NjMsInN1YiI6IjEifQ.jGdf3f6iktz4hwZpVtQVfSMv54HDdXPFHqROdruBh8Y
