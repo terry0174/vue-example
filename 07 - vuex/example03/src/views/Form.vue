@@ -91,7 +91,6 @@
                         headers: {
                             "Authorization": "Bearer " + this.$store.state.accessToken
                         },
-
                     })
                     .then(function (response) {
                         // handle success
