@@ -57,7 +57,7 @@
                     column: ['name', 'sex', 'age', 'phone', 'email'],
                     sex: ['male', 'female']
                 },
-                items: []
+                data: []
             }
         },
         filters: {
@@ -67,7 +67,7 @@
         },
         computed: {
             items: function () {
-                return this.items.sort(function (a, b) {
+                return this.data.sort(function (a, b) {
                     return a.age > b.age ? 1 : -1;
                 });
             }
@@ -110,7 +110,7 @@
                 //     },
                 //     "processData": false,
                 // }).done(function (response) {
-                //     _this.items = response;
+                //     _this.data = response;
                 // });
             }
         },
