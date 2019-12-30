@@ -94,9 +94,7 @@
                 });
             }
         },
-        methods: {
-            add: function () {}
-        }
+        methods: {}
     }
 </script>
 ```

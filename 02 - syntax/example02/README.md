@@ -68,7 +68,15 @@ var app = new Vue({
                     <a v-bind:href="'mailto:' + item.email">{{item.email}}</a>
                 </td>
             </tr>
-            <!-- 略 -->
+            <tr :class="form.sex">
+                <td>{{form.name}}</td>
+                <td>{{form.sex == 'male'?'男':'女'}}</td>
+                <td>{{form.age}}</td>
+                <td>{{form.phone}}</td>
+                <td>
+                    <a v-bind:href="'mailto:' + form.email">{{form.email}}</a>
+                </td>
+            </tr> 
         </table>
         <form>
             <div>
