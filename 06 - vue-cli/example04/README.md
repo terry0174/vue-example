@@ -1,24 +1,41 @@
-# example01
+# Step 1. 依據環境變量加入設定檔
 
-## Project setup
-```
-npm install
-```
+`.env.development`
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+```properties
+VUE_APP_JSON_SERVER=http://localhost:3000
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+`.env.production`
+
+```properties
+VUE_APP_JSON_SERVER=http://localhost:3001
 ```
 
-### Lints and fixes files
-```
-npm run lint
+# Step 2. 於`Vue`內使用變量
+
+`src\views\Form.vue`
+
+```diff
+! axios.put(process.env.VUE_APP_JSON_SERVER + '/item/' + this.$route.params.id, {
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```diff
+! axios.post(process.env.VUE_APP_JSON_SERVER + '/item', this.form)
+```
+
+```diff
+! axios.get(process.env.VUE_APP_JSON_SERVER + '/item/' + this.$route.params.id)
+```
+
+`src\views\List.vue`
+
+```diff
+! axios.delete(process.env.VUE_APP_JSON_SERVER + '/item/' + id)
+```
+
+```diff
+! axios.get(process.env.VUE_APP_JSON_SERVER + '/item')
+```
+
+# Step 3. 切換環境測試
