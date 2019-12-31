@@ -10,13 +10,13 @@ $ json-server-auth -w db-auth.json -r routes_600.json
 
 ```javascript
 export default new Vuex.Store({
-	state: {
+    state: {
         accessToken: null
-	},
-	mutations: {
+    },
+    mutations: {
         // 略
-	},
-	getters: {
+    },
+    getters: {
         isLogin(state) {
             return state.accessToken != null && state.accessToken != undefined;
         },
@@ -30,9 +30,9 @@ export default new Vuex.Store({
 
             return JSON.parse(jsonPayload);
         },
-	},
-	actions: {},
-	modules: {}
+    },
+    actions: {},
+    modules: {}
 })
 ```
 
