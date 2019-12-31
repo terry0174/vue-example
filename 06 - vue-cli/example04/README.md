@@ -40,14 +40,9 @@ VUE_APP_JSON_SERVER=http://localhost:3001
 
 # Step 3. 切換環境測試
 
-* `development`
-
-    ```bash
-    $ json-server -w db.json -p 3000
-    ```
-
-* `production`
-
-    ```bash
-    $ json-server -w db.json -p 3001
-    ```
+```bash
+# development
+$ json-server -w db.json -p 3000
+# production
+$ json-server -w db.json -p 3001
+```
