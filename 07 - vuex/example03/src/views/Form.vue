@@ -21,7 +21,7 @@
                     <b-form-input v-model="form.email" type="email" placeholder="Enter email"></b-form-input>
                 </b-form-group>
                 <b-button-group>
-                    <b-button type="submit" variant="primary" :disabled="error != ''">{{isUpdate ? '修改' : '新增'}}</b-button>
+                    <b-button type="submit" variant="primary">{{isUpdate ? '修改' : '新增'}}</b-button>
                     <b-button type="reset" variant="danger">取消</b-button>
                 </b-button-group>
             </b-form>

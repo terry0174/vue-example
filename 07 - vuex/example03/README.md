@@ -52,13 +52,7 @@ axios.get(process.env.VUE_APP_JSON_SERVER + '/item?userId=' + this.$store.getter
   <template>
       <b-container>
           <b-card bg-variant="light">
-              <b-form @submit.prevent="(isUpdate ? updateItem() : addItem())" @reset="$router.push('/')">
-                  <!-- 略 -->
-                  <b-button-group>
-!                     <b-button type="submit" variant="primary" :disabled="error != ''">{{isUpdate ? '修改' : '新增'}}</b-button>
-                      <b-button type="reset" variant="danger">取消</b-button>
-                  </b-button-group>
-              </b-form>
+              <!-- 略 -->
 +             <b-alert :show="error != ''" variant="danger">{{error}}</b-alert>
           </b-card>
       </b-container>
