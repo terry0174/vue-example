@@ -28,7 +28,7 @@ export default new Vuex.Store({
             }).join(''));
 
             return JSON.parse(jsonPayload);
-        },
+        }
 	},
 	actions: {},
 	modules: {}
