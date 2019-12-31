@@ -90,8 +90,7 @@ axios.put(process.env.VUE_APP_JSON_SERVER + '/item/' + this.$route.params.id, {
     }, {
         headers: {
             "Authorization": "Bearer " + this.$store.state.accessToken
-        },
-
+        }
     })
 ```
 
@@ -99,7 +98,7 @@ axios.put(process.env.VUE_APP_JSON_SERVER + '/item/' + this.$route.params.id, {
 axios.post(process.env.VUE_APP_JSON_SERVER + '/item', this.form, {
         headers: {
             "Authorization": "Bearer " + this.$store.state.accessToken
-        },
+        }
     })
 ```
 

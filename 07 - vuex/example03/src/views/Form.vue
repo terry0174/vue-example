@@ -68,8 +68,7 @@
                     }, {
                         headers: {
                             "Authorization": "Bearer " + this.$store.state.accessToken
-                        },
-
+                        }
                     })
                     .then(function (response) {
                         // handle success
@@ -90,7 +89,7 @@
                 axios.post(process.env.VUE_APP_JSON_SERVER + '/item', this.form, {
                         headers: {
                             "Authorization": "Bearer " + this.$store.state.accessToken
-                        },
+                        }
                     })
                     .then(function (response) {
                         // handle success
