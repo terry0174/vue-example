@@ -74,34 +74,7 @@ Vue.use(BootstrapVue)
 </template>
 
 <script>
-    import axios from 'axios';
-
-    export default {
-        data: function () {
-            return {
-                // 略
-            }
-        },
-        filters: {
-            // 略
-        },
-        computed: {
-            items: function () {
-
-                var _this = this;
-
-                return this.data.filter(function (value, index, arr) {
-                    return _this.display.sex.includes(value.sex);
-                });
-            }
-        },
-        methods: {
-            // 略
-        },
-        mounted: function () {
-            this.init();
-        }
-    }
+    // 略
 </script>
 
 <style scoped>
@@ -177,7 +150,12 @@ Vue.use(BootstrapVue)
                 return fields;
             },
             items: function () {
-                // 略
+
+                var _this = this;
+
+                return this.data.filter(function (value, index, arr) {
+                    return _this.display.sex.includes(value.sex);
+                });
             }
         },
         methods: {
