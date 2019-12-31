@@ -51,7 +51,7 @@ Vue.use(BootstrapVue)
 <template>
     <b-container>
         <b-card bg-variant="light">
-            <b-table striped hover id="items-table" :items="items" :fields="fields">
+            <b-table striped hover id="items-table" :items="items">
                 <template v-slot:cell(id)="data">
                     <b-link @click.prevent="removeItem(data.value)">X</b-link>
                 </template>
@@ -113,7 +113,9 @@ Vue.use(BootstrapVue)
                     </b-form-checkbox-group>
                 </b-form-group>
             </b-form>
-            <!-- 略 -->
+            <b-table striped hover id="items-table" :items="items" :fields="fields">
+                <!-- 略 -->
+            </b-table>
         </b-card>
     </b-container>
 </template>
