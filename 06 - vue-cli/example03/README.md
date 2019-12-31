@@ -18,7 +18,104 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 ```
 
-# Step 2. 使用`<b-table>`美化`List.vue`
+# Step 2. 美化`List.vue`
+
+## Step 2.1 使用`<b-container>`&`<b-card>`
+
+`src\views\List.vue`
+
+```html
+<template>
+    <b-container>
+        <b-card bg-variant="light">
+        </b-card>
+    </b-container>
+</template>
+
+<script>
+    // 略
+</script>
+
+<style scoped>
+    .container {
+        padding-top: 20px;
+    }
+</style>
+```
+
+## Step 2.2 使用`<b-table>`
+
+`src\views\List.vue`
+
+```html
+<template>
+    <b-container>
+        <b-card bg-variant="light">
+            <b-table striped hover id="items-table" :items="items" :fields="fields">
+                <template v-slot:cell(id)="data">
+                    <b-link @click.prevent="removeItem(data.value)">X</b-link>
+                </template>
+                <template v-slot:cell(name)="data">
+                    <router-link :to="'/form/' + data.item.id">
+                        {{data.value}}
+                    </router-link>
+                </template>
+                <template v-slot:cell(phone)="data">
+                    {{ data.value | phoneFormat}}
+                </template>
+                <template v-slot:cell(email)="data">
+                    <a :href="'mailto:' + data.value">
+                        {{ data.value }}
+                    </a>
+                </template>
+            </b-table>
+        </b-card>
+    </b-container>
+</template>
+
+<script>
+    import axios from 'axios';
+
+    export default {
+        data: function () {
+            return {
+                // 略
+            }
+        },
+        filters: {
+            // 略
+        },
+        computed: {
+            items: function () {
+
+                var _this = this;
+
+                return this.data.filter(function (value, index, arr) {
+                    return _this.display.sex.includes(value.sex);
+                });
+            }
+        },
+        methods: {
+            // 略
+        },
+        mounted: function () {
+            this.init();
+        }
+    }
+</script>
+
+<style scoped>
+    .container {
+        padding-top: 20px;
+    }
+
+    table {
+        margin-bottom: 15px;
+    }
+</style>
+```
+
+## Step 2.3 使用`<b-form>`
 
 `src\views\List.vue`
 
@@ -43,24 +140,7 @@ Vue.use(BootstrapVue)
                     </b-form-checkbox-group>
                 </b-form-group>
             </b-form>
-            <b-table striped hover id="items-table" :items="items" :fields="fields">
-                <template v-slot:cell(id)="data">
-                    <b-link @click.prevent="removeItem(data.value)">X</b-link>
-                </template>
-                <template v-slot:cell(name)="data">
-                    <router-link :to="'/form/' + data.item.id">
-                        {{data.value}}
-                    </router-link>
-                </template>
-                <template v-slot:cell(phone)="data">
-                    {{ data.value | phoneFormat}}
-                </template>
-                <template v-slot:cell(email)="data">
-                    <a :href="'mailto:' + data.value">
-                        {{ data.value }}
-                    </a>
-                </template>
-            </b-table>
+            <!-- 略 -->
         </b-card>
     </b-container>
 </template>
@@ -97,12 +177,7 @@ Vue.use(BootstrapVue)
                 return fields;
             },
             items: function () {
-
-                var _this = this;
-
-                return this.data.filter(function (value, index, arr) {
-                    return _this.display.sex.includes(value.sex);
-                });
+                // 略
             }
         },
         methods: {
@@ -113,19 +188,9 @@ Vue.use(BootstrapVue)
         }
     }
 </script>
-
-<style scoped>
-    .container {
-        padding-top: 20px;
-    }
-
-    table {
-        margin-bottom: 15px;
-    }
-</style>
 ```
 
-# Step 3. 使用`<b-pagination>`製作分頁
+## Step 2.4 使用`<b-pagination>`
 
 `src\views\List.vue`
 
@@ -160,7 +225,7 @@ Vue.use(BootstrapVue)
         },
 ```
 
-# Step 4. 美化`Form.vue`
+# Step 3. 美化`Form.vue`
 
 `src\views\Form.vue`
 
@@ -220,7 +285,7 @@ Vue.use(BootstrapVue)
 - },
 ```
 
-# Step 5. 加入導覽列
+# Step 4. 加入導覽列
 
 `src\App.vue`
 
