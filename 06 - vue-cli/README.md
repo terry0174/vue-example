@@ -17,10 +17,10 @@ $ npm install -g @vue/cli
 * Note
     1. 轉移"05 - Vue Router - example 03"
         * `JQuery`部分暫時註解
-    2. 設定ESLint
-        * "no-unused-vars"設為警告
-        * "vue/no-unused-vars"設為警告
-    3. 修正"vue/no-side-effects-in-computed-properties"問題
+    2. 設定`ESLint`
+        * `"no-unused-vars"`設為警告
+        * `"vue/no-unused-vars"`設為警告
+    3. 修正`"vue/no-side-effects-in-computed-properties"`問題
 
 # Example 02
 
