@@ -15,17 +15,20 @@ $ npm install -g @vue/cli
 # Example 01
 
 * Note
-    1. 設定ESLint
-        * 關閉"保存時檢查"
-        * 關閉"vue/no-unused-vars"
-    2. 轉移"05 - Vue Router - example 03"
+    1. 轉移"05 - Vue Router - example 03"
         * `JQuery`部分暫時註解
+    2. 設定ESLint
+        * "no-unused-vars"設為警告
+        * "vue/no-unused-vars"設為警告
+    3. 修正"vue/no-side-effects-in-computed-properties"問題
 
 # Example 02
 
 * Note
     1. 安裝`axios`依賴
     2. 使用`axios`取代`JQuery`呼叫`JSON Server`
+    3. 設定`ESLint`
+        * `"no-console"`設為警告
 
 > https://github.com/axios/axios
 

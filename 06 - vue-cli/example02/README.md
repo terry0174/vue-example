@@ -152,3 +152,15 @@
     }
 </script>
 ```
+
+# Step 3. 設定`ESLint`
+
+`package.json`
+
+```diff
+  "rules": {
+    "no-unused-vars": "warn",
++   "no-console": "warn",
+    "vue/no-unused-vars": "warn"
+  }
+```
