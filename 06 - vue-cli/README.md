@@ -20,7 +20,6 @@ $ npm install -g @vue/cli
     2. 設定`ESLint`
         * `"no-unused-vars"`設為警告
         * `"vue/no-unused-vars"`設為警告
-    3. 修正`"vue/no-side-effects-in-computed-properties"`問題
 
 # Example 02
 

@@ -225,17 +225,3 @@ import './assets/css/app.css'
 +   "vue/no-unused-vars": "warn"
   }
 ```
-
-# Step 3. 修正`"vue/no-side-effects-in-computed-properties"`問題
-
-`src\views\List.vue`
-
-```diff
-  computed: {
-      items: function () {
-!         return Array.from(this.data).sort(function (a, b) {
-              return a.age > b.age ? 1 : -1;
-          });
-      }
-  },
-```

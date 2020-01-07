@@ -69,7 +69,7 @@
         },
         computed: {
             items: function () {
-                return Array.from(this.data).sort(function (a, b) {
+                return this.data.slice().sort(function (a, b) {
                     return a.age > b.age ? 1 : -1;
                 });
             }
