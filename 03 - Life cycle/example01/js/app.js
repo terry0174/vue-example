@@ -89,35 +89,35 @@ var app = new Vue({
     },
     created: function () {
         //vue instance 被 constructor 建立後，在這裡完成 data binding
-        console.log('created');
+        console.log('created:');
         console.log(this.data);
         console.log(this.$el);
         alert('created');
     },
     beforeMount: function () {
         //綁定 DOM 之前
-        console.log('beforeMount');
+        console.log('beforeMount:');
         console.log(this.data);
         console.log(this.$el);
         alert('beforeMount');
     },
     mounted: function () {
         //綁定 DOM 之後
-        console.log('mounted');
+        console.log('mounted:');
         console.log(this.data);
         console.log(this.$el);
         alert('mounted');
     },
     beforeUpdate: function () {
         //資料更新，但尚未更新 DOM
-        console.log('beforeUpdate');
+        console.log('beforeUpdate:');
         console.log(this.data);
         console.log(this.$el);
         alert('beforeUpdate');
     },
     updated: function () {
         //因資料更新，而更新 DOM
-        console.log('updated');
+        console.log('updated:');
         console.log(this.data);
         console.log(this.$el);
         alert('updated');
